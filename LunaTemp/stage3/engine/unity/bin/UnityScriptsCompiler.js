@@ -1,6 +1,6 @@
 if ( TRACE ) { TRACE( JSON.parse( '["BirdDeath#init","BirdDeath#Start","BirdDeath#Update","BirdDeath#OnCollisionEnter2D","BirdDeath#OnTriggerEnter2D","BirdMovement#init","BirdMovement#Start","BirdMovement#Update","BirdMovement#BirdMoveForward","BirdMovement#ClickToFly","BirdTutorial#init","BirdTutorial#Start","BirdTutorial#Update","BirdTutorial#BirdTutorialFly","CameraMovement#init","CameraMovement#Start","CameraMovement#FixedUpdate","GameOver#Start","GameOver#Update","GameOver#RetryButton","HandTap#Start","HandTap#Update"]' ) ); }
 /**
- * @version 1.0.8276.36824
+ * @version 1.0.8276.40518
  * @copyright anton
  * @compiler Bridge.NET 17.9.19-luna
  */
@@ -277,9 +277,6 @@ if ( TRACE ) { TRACE( "CameraMovement#FixedUpdate", this ); }
 
                 var targetCamPos = this.player.position.$clone().add( this.offset );
                 this.transform.position = new pc.Vec3().lerp( this.transform.position, targetCamPos, this.smoothing * UnityEngine.Time.deltaTime );
-
-                targetCamPos.x = Math.max(this.minPos.x, Math.min(this.transform.position.x, this.maxPos.x));
-                targetCamPos.y = Math.max(this.minPos.y, Math.min(this.transform.position.y, this.maxPos.y));
             },
             /*CameraMovement.FixedUpdate end.*/
 

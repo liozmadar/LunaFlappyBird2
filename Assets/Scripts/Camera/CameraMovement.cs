@@ -8,8 +8,8 @@ public class CameraMovement : MonoBehaviour
     public float smoothing = 5f;
     public Vector3 offset;
 
-    public Vector2 minPos;
-    public Vector2 maxPos;
+    public Vector3 minPos;
+    public Vector3 maxPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +20,12 @@ public class CameraMovement : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 targetCamPos = player.position + offset;
-        transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime);
+
+        Vector3 boundPositions = new Vector3(
+            Mathf.Clamp(targetCamPos.x, minPos.x, maxPos.x),
+            Mathf.Clamp(targetCamPos.y, minPos.y, maxPos.y),
+            Mathf.Clamp(targetCamPos.z, minPos.z, maxPos.z));
+
+        transform.position = Vector3.Lerp(transform.position, boundPositions, smoothing * Time.deltaTime);
     }
 }
