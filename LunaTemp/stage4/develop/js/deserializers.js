@@ -556,8 +556,8 @@ Deserializers["CameraMovement"] = function (request, data, root) {
   request.r(i607[0], i607[1], 0, i606, 'player')
   i606.smoothing = i607[2]
   i606.offset = new pc.Vec3( i607[3], i607[4], i607[5] )
-  i606.minPos = new pc.Vec2( i607[6], i607[7] )
-  i606.maxPos = new pc.Vec2( i607[8], i607[9] )
+  i606.minPos = new pc.Vec3( i607[6], i607[7], i607[8] )
+  i606.maxPos = new pc.Vec3( i607[9], i607[10], i607[11] )
   return i606
 }
 
@@ -1914,7 +1914,7 @@ Deserializers.productName = "FlappyBird";
 
 Deserializers.lunaInitializationTime = "08/28/2022 16:26:06";
 
-Deserializers.lunaDaysRunning = "1.1";
+Deserializers.lunaDaysRunning = "1.2";
 
 Deserializers.lunaVersion = "3.12.0";
 
@@ -1962,7 +1962,7 @@ Deserializers.applicationIdentifier = "com.DefaultCompany.FlappyBird";
 
 Deserializers.disableAntiAliasing = true;
 
-Deserializers.buildID = "33ab0bf0-ad7d-4c14-bfeb-c438907aecbc";
+Deserializers.buildID = "bf23c588-afee-4a34-a4e5-5cbd1295a6d6";
 
 Deserializers.typeNameToIdMap = function(){ var i = 0; return Deserializers.types.reduce( function( res, item ) { res[ item ] = i++; return res; }, {} ) }()
 

@@ -1,6 +1,6 @@
 if ( TRACE ) { TRACE( JSON.parse( '["BirdDeath#init","BirdDeath#Start","BirdDeath#Update","BirdDeath#OnCollisionEnter2D","BirdDeath#OnTriggerEnter2D","BirdMovement#init","BirdMovement#Start","BirdMovement#Update","BirdMovement#BirdMoveForward","BirdMovement#ClickToFly","BirdTutorial#init","BirdTutorial#Start","BirdTutorial#Update","BirdTutorial#BirdTutorialFly","CameraMovement#init","CameraMovement#Start","CameraMovement#FixedUpdate","GameOver#Start","GameOver#Update","GameOver#RetryButton","HandTap#Start","HandTap#Update"]' ) ); }
 /**
- * @version 1.0.8276.40279
+ * @version 1.0.8276.41589
  * @copyright anton
  * @compiler Bridge.NET 17.9.19-luna
  */
@@ -257,8 +257,8 @@ if ( TRACE ) { TRACE( "BirdTutorial#BirdTutorialFly", this ); }
 if ( TRACE ) { TRACE( "CameraMovement#init", this ); }
 
                 this.offset = new UnityEngine.Vector3();
-                this.minPos = new UnityEngine.Vector2();
-                this.maxPos = new UnityEngine.Vector2();
+                this.minPos = new UnityEngine.Vector3();
+                this.maxPos = new UnityEngine.Vector3();
                 this.smoothing = 5.0;
             }
         },
@@ -276,7 +276,10 @@ if ( TRACE ) { TRACE( "CameraMovement#Start", this ); }
 if ( TRACE ) { TRACE( "CameraMovement#FixedUpdate", this ); }
 
                 var targetCamPos = this.player.position.$clone().add( this.offset );
-                this.transform.position = new pc.Vec3().lerp( this.transform.position, targetCamPos, this.smoothing * UnityEngine.Time.deltaTime );
+
+                var boundPositions = new pc.Vec3( Math.max(this.minPos.x, Math.min(targetCamPos.x, this.maxPos.x)), Math.max(this.minPos.y, Math.min(targetCamPos.y, this.maxPos.y)), Math.max(this.minPos.z, Math.min(targetCamPos.z, this.maxPos.z)) );
+
+                this.transform.position = new pc.Vec3().lerp( this.transform.position, boundPositions, this.smoothing * UnityEngine.Time.deltaTime );
             },
             /*CameraMovement.FixedUpdate end.*/
 
@@ -361,7 +364,7 @@ if ( TRACE ) { TRACE( "HandTap#Update", this ); }
         $n = ["System","UnityEngine","TMPro"];
 
     /*CameraMovement start.*/
-    $m("CameraMovement", function () { return {"att":1048577,"a":2,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"},{"a":1,"n":"FixedUpdate","t":8,"sn":"FixedUpdate","rt":$n[0].Void},{"a":1,"n":"Start","t":8,"sn":"Start","rt":$n[0].Void},{"a":2,"n":"maxPos","t":4,"rt":$n[1].Vector2,"sn":"maxPos"},{"a":2,"n":"minPos","t":4,"rt":$n[1].Vector2,"sn":"minPos"},{"a":2,"n":"offset","t":4,"rt":$n[1].Vector3,"sn":"offset"},{"a":2,"n":"player","t":4,"rt":$n[1].Transform,"sn":"player"},{"a":2,"n":"smoothing","t":4,"rt":$n[0].Single,"sn":"smoothing","box":function ($v) { return Bridge.box($v, System.Single, System.Single.format, System.Single.getHashCode);}}]}; }, $n);
+    $m("CameraMovement", function () { return {"att":1048577,"a":2,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"},{"a":1,"n":"FixedUpdate","t":8,"sn":"FixedUpdate","rt":$n[0].Void},{"a":1,"n":"Start","t":8,"sn":"Start","rt":$n[0].Void},{"a":2,"n":"maxPos","t":4,"rt":$n[1].Vector3,"sn":"maxPos"},{"a":2,"n":"minPos","t":4,"rt":$n[1].Vector3,"sn":"minPos"},{"a":2,"n":"offset","t":4,"rt":$n[1].Vector3,"sn":"offset"},{"a":2,"n":"player","t":4,"rt":$n[1].Transform,"sn":"player"},{"a":2,"n":"smoothing","t":4,"rt":$n[0].Single,"sn":"smoothing","box":function ($v) { return Bridge.box($v, System.Single, System.Single.format, System.Single.getHashCode);}}]}; }, $n);
     /*CameraMovement end.*/
 
     /*GameOver start.*/
