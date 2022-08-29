@@ -21,8 +21,5 @@ public class CameraMovement : MonoBehaviour
     {
         Vector3 targetCamPos = player.position + offset;
         transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime);
-
-        targetCamPos.x = Mathf.Clamp(transform.position.x, minPos.x, maxPos.x);
-        targetCamPos.y = Mathf.Clamp(transform.position.y, minPos.y, maxPos.y);
     }
 }

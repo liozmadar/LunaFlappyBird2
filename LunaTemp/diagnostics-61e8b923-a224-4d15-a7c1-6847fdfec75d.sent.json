@@ -1,0 +1,85 @@
+{
+    "BuildID": "61e8b923-a224-4d15-a7c1-6847fdfec75d",
+    "Command": "project:build",
+    "ProjectID": "85a9c8dd-52d1-49e8-8128-0e14ee15671b",
+    "ProjectStateHash": "ddc0a92ded7ad0b83202b55521b21f472213b18b671a4ab085900efa31589313ddc0a92ded7ad0b83202b55521b21f472213b18b671a4ab085900efa31589313ddc0a92ded7ad0b83202b55521b21f472213b18b671a4ab085900efa31589313ddc0a92ded7ad0b83202b55521b21f472213b18b671a4ab085900efa31589313ddc0a92ded7ad0b83202b55521b21f472213b18b671a4ab085900efa31589313ddc0a92ded7ad0b83202b55521b21f472213b18b671a4ab085900efa31589313ddc0a92ded7ad0b83202b55521b21f472213b18b671a4ab085900efa31589313ddc0a92ded7ad0b83202b55521b21f472213b18b671a4ab085900efa31589313ddc0a92ded7ad0b83202b55521b21f472213b18b671a4ab085900efa31589313ddc0a92ded7ad0b83202b55521b21f472213b18b671a4ab085900efa31589313ddc0a92ded7ad0b83202b55521b21f472213b18b671a4ab085900efa31589313ddc0a92ded7ad0b83202b55521b21f472213b18b671a4ab085900efa31589313ddc0a92ded7ad0b83202b55521b21f472213b18b671a4ab085900efa31589313ddc0a92ded7ad0b83202b55521b21f472213b18b671a4ab085900efa31589313ddc0a92ded7ad0b83202b55521b21f472213b18b671a4ab085900efa31589313ddc0a92ded7ad0b83202b55521b21f472213b18b671a4ab085900efa31589313ddc0a92ded7ad0b83202b55521b21f472213b18b671a4ab085900efa31589313ddc0a92ded7ad0b83202b55521b21f472213b18b671a4ab085900efa31589313ddc0a92ded7ad0b83202b55521b21f472213b18b671a4ab085900efa31589313ddc0a92ded7ad0b83202b55521b21f472213b18b671a4ab085900efa31589313ddc0a92ded7ad0b83202b55521b21f472213b18b671a4ab085900efa31589313ddc0a92ded7ad0b83202b55521b21f472213b18b671a4ab085900efa31589313ddc0a92ded7ad0b83202b55521b21f472213b18b671a4ab085900efa31589313ddc0a92ded7ad0b83202b55521b21f472213b18b671a4ab085900efa31589313ddc0a92ded7ad0b83202b55521b21f472213b18b671a4ab085900efa31589313ddc0a92ded7ad0b83202b55521b21f472213b18b671a4ab085900efa31589313ddc0a92ded7ad0b83202b55521b21f472213b18b671a4ab085900efa31589313",
+    "StageCompletedAt": 2,
+    "EarliestFatalError": 0,
+    "StartTime": 1661794024439,
+    "EndTime": 1661794042564,
+    "PlaygroundUserID": 5895,
+    "OperatingSystem": "win32",
+    "UnityVersion": "2019.4.40f1",
+    "LunaVersion": "3.12.0",
+    "LogCount": 3,
+    "Logs": [
+        {
+            "LogID": "bb93a6b7-f003-4fd6-a532-ac6ad0ab0062",
+            "Order": 0,
+            "Timestamp": 1661794036159,
+            "Stage": 1,
+            "Severity": 2,
+            "ErrorType": 7,
+            "ErrorSubType": 8,
+            "ErrorCode": "LP1014",
+            "Description": "We recommend running Runtime Analysis to find and remove all unused code",
+            "Details": [
+                "Navigate to the Code > Runtime Analysis tab and hit \"Start Analysis\""
+            ],
+            "DescriptionValues": [],
+            "DetailsValues": [],
+            "LogCount": 1,
+            "FilePath": "",
+            "LinePosition": 0,
+            "ClassName": "",
+            "MemberName": ""
+        },
+        {
+            "LogID": "0cb7d6c8-715e-4f4a-aa29-318f2b194e7a",
+            "Order": 1,
+            "Timestamp": 1661794036161,
+            "Stage": 1,
+            "Severity": 2,
+            "ErrorType": 6,
+            "ErrorSubType": 1,
+            "ErrorCode": "LP1015",
+            "Description": "This TMP version is not fully supported",
+            "Details": [
+                "The incorrect Text Mesh Pro for this unity version is in use, please update to the recommended version: {0}"
+            ],
+            "DescriptionValues": [],
+            "DetailsValues": [
+                "2.0.0"
+            ],
+            "LogCount": 1,
+            "FilePath": "",
+            "LinePosition": 0,
+            "ClassName": "",
+            "MemberName": ""
+        },
+        {
+            "LogID": "534d2306-c627-4c78-a409-78354f336056",
+            "Order": 2,
+            "Timestamp": 1661794036164,
+            "Stage": 1,
+            "Severity": 1,
+            "ErrorType": 7,
+            "ErrorSubType": 1,
+            "ErrorCode": "LP1002",
+            "Description": "Repeat wrap mode used on a texture with non power-of-two dimensions, this might not be rendered correctly.",
+            "Details": [
+                "Repeat wrap mode used on 'LiberationSans SDF Atlas' texture at 'Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset' with non power-of-two dimensions, this might not be rendered correctly."
+            ],
+            "DescriptionValues": [],
+            "DetailsValues": [
+                "LiberationSans SDF Atlas",
+                "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset"
+            ],
+            "LogCount": 1,
+            "FilePath": "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset",
+            "LinePosition": 0,
+            "ClassName": "",
+            "MemberName": ""
+        }
+    ]
+}
