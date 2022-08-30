@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Luna.Unity;
 
 public class BirdMovement : MonoBehaviour
 {
-    [LunaPlaygroundAsset("All speed", 0 ,"wjfds")]
+    //[LunaPlaygroundField("name", 1, "title")]
+    //private string myName;
+
     public float jumpForce;
 
     public float speed;
