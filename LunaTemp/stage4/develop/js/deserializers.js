@@ -1914,7 +1914,7 @@ Deserializers.productName = "FlappyBird";
 
 Deserializers.lunaInitializationTime = "08/28/2022 16:26:06";
 
-Deserializers.lunaDaysRunning = "1.2";
+Deserializers.lunaDaysRunning = "1.8";
 
 Deserializers.lunaVersion = "3.12.0";
 
@@ -1962,7 +1962,7 @@ Deserializers.applicationIdentifier = "com.DefaultCompany.FlappyBird";
 
 Deserializers.disableAntiAliasing = true;
 
-Deserializers.buildID = "bf23c588-afee-4a34-a4e5-5cbd1295a6d6";
+Deserializers.buildID = "96a721f1-e041-4366-9e48-31b6a665d51b";
 
 Deserializers.typeNameToIdMap = function(){ var i = 0; return Deserializers.types.reduce( function( res, item ) { res[ item ] = i++; return res; }, {} ) }()
 

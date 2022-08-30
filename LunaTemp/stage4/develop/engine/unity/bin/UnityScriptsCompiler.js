@@ -1,6 +1,6 @@
 if ( TRACE ) { TRACE( JSON.parse( '["BirdDeath#init","BirdDeath#Start","BirdDeath#Update","BirdDeath#OnCollisionEnter2D","BirdDeath#OnTriggerEnter2D","BirdMovement#init","BirdMovement#Start","BirdMovement#Update","BirdMovement#BirdMoveForward","BirdMovement#ClickToFly","BirdTutorial#init","BirdTutorial#Start","BirdTutorial#Update","BirdTutorial#BirdTutorialFly","CameraMovement#init","CameraMovement#Start","CameraMovement#FixedUpdate","GameOver#Start","GameOver#Update","GameOver#RetryButton","HandTap#Start","HandTap#Update"]' ) ); }
 /**
- * @version 1.0.8276.41589
+ * @version 1.0.8277.28304
  * @copyright anton
  * @compiler Bridge.NET 17.9.19-luna
  */
@@ -52,7 +52,7 @@ if ( TRACE ) { TRACE( "BirdDeath#Update", this ); }
                     this.gameOverText.gameObject.SetActive(true);
                     this.RetryText.SetActive(true);
                     this.gameOverText.fontSize++;
-                    if (this.gameOverText.fontSize > 70) {
+                    if (this.gameOverText.fontSize > 130) {
                         this.gameOverBool = false;
                     }
                 }

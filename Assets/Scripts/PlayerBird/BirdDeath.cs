@@ -39,7 +39,7 @@ public class BirdDeath : MonoBehaviour
             gameOverText.gameObject.SetActive(true);
             RetryText.SetActive(true);
             gameOverText.fontSize++;
-            if (gameOverText.fontSize > 70)
+            if (gameOverText.fontSize > 130)
             {
                 gameOverBool = false;
             }

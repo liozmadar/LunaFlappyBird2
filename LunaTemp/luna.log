@@ -1,24 +1,24 @@
-report@config:load 9.38
+report@config:load 5.03
 Authorized using stored user info.
-report@account:authorize 13.76
+report@account:authorize 7.68
 stderr: 'rm' is not recognized as an internal or external command,
 operable program or batch file.
 
-Exporting assets from Unity..........
+Exporting assets from Unity........
 [ Stage1 ] Assets exported from Unity and staged for further processing
-report@unity:export 7110.61
-report@config:load 12.56
+report@unity:export 5069.23
+report@config:load 5.45
 C:\Users\Lioz Madar\Desktop\LunaMaker\LunaFlappyBird2\FlappyBird\LunaTemp\expert.json is invalid or doesn't exist
 C:\Users\Lioz Madar\Desktop\LunaMaker\LunaFlappyBird2\FlappyBird\LunaTemp\expert.json is invalid or doesn't exist
 C:\Users\Lioz Madar\Desktop\LunaMaker\LunaFlappyBird2\FlappyBird\LunaTemp\expert.json is invalid or doesn't exist
 C:\Users\Lioz Madar\Desktop\LunaMaker\LunaFlappyBird2\FlappyBird\LunaTemp\expert.json is invalid or doesn't exist
 C:\Users\Lioz Madar\Desktop\LunaMaker\LunaFlappyBird2\FlappyBird\LunaTemp\expert.json is invalid or doesn't exist
-Using C:/Users/Lioz Madar/Desktop/LunaMaker/LunaFlappyBird2/FlappyBird/Assets/TextMesh Pro/Fonts/LiberationSans.ttf file to generate an atlas for LiberationSans[20288] font
+Using C:/Users/Lioz Madar/Desktop/LunaMaker/LunaFlappyBird2/FlappyBird/Assets/TextMesh Pro/Fonts/LiberationSans.ttf file to generate an atlas for LiberationSans[15868] font
   Using alphabet  §1234567890-=qwertyuiop[]asdfghjkl;'\`zxcvbnm,./±!@#$%^&*()_+QWERTYUIOP{}ASDFGHJKL:"|~ZXCVBNM<>?
-Using C:/Windows/Fonts/arial.ttf file to generate an atlas for Arial[488] font
+Using C:/Windows/Fonts/arial.ttf file to generate an atlas for Arial[514] font
   Using alphabet  §1234567890-=qwertyuiop[]asdfghjkl;'\`zxcvbnm,./±!@#$%^&*()_+QWERTYUIOP{}ASDFGHJKL:"|~ZXCVBNM<>?
-Combined 97 glyphs into bitmap texture at C:/Users/Lioz Madar/Desktop/LunaMaker/LunaFlappyBird2/FlappyBird/LunaTemp/stage1/tmp/fonts/LiberationSans-20288/output_0.png (56kb)
-Combined 97 glyphs into bitmap texture at C:/Users/Lioz Madar/Desktop/LunaMaker/LunaFlappyBird2/FlappyBird/LunaTemp/stage1/tmp/fonts/Arial-488/output_0.png (59kb)
+Combined 97 glyphs into bitmap texture at C:/Users/Lioz Madar/Desktop/LunaMaker/LunaFlappyBird2/FlappyBird/LunaTemp/stage1/tmp/fonts/LiberationSans-15868/output_0.png (56kb)
+Combined 97 glyphs into bitmap texture at C:/Users/Lioz Madar/Desktop/LunaMaker/LunaFlappyBird2/FlappyBird/LunaTemp/stage1/tmp/fonts/Arial-514/output_0.png (59kb)
 C:\Users\Lioz Madar\Desktop\LunaMaker\LunaFlappyBird2\FlappyBird\LunaTemp\expert.json is invalid or doesn't exist
 C:\Users\Lioz Madar\Desktop\LunaMaker\LunaFlappyBird2\FlappyBird\LunaTemp\expert.json is invalid or doesn't exist
 C:\Users\Lioz Madar\Desktop\LunaMaker\LunaFlappyBird2\FlappyBird\LunaTemp\expert.json is invalid or doesn't exist
@@ -45,15 +45,15 @@ C:\Users\Lioz Madar\Desktop\LunaMaker\LunaFlappyBird2\FlappyBird\LunaTemp\expert
 C:\Users\Lioz Madar\Desktop\LunaMaker\LunaFlappyBird2\FlappyBird\LunaTemp\expert.json is invalid or doesn't exist
 Resources:
 {}
-report@assets:stage2 3052.46
+report@assets:stage2 2122.03
 C:\Users\Lioz Madar\Desktop\LunaMaker\LunaFlappyBird2\FlappyBird\LunaTemp\expert.json is invalid or doesn't exist
-report@assets:stage3 355.17
+report@assets:stage3 201.38
 [ Stage2 ] Assets postprocessed and bundled successfully
-report@code:compose 415.04
-report@config:unity 0.21
+report@code:compose 176.50
+report@config:unity 0.43
 MSBuild version 17.3.1+2badb37d1 for .NET Framework
 
-Build started 29/08/2022 23:10:04.
+Build started 30/08/2022 15:47:04.
 
 Project "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj" on node 1 (Rebuild target(s)).
 
@@ -115,39 +115,36 @@ CoreClean:
   Deleting file "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\obj\Debug\UnityScriptsCompiler.pdb".
 
 GenerateTargetFrameworkMonikerAttribute:
-
 Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
 
 CoreCompile:
-  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:CS0626,1701,1702 /fullpaths /nostdlib+ /errorreport:prompt /warn:4 /define:UNITY_LUNA;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_2019;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2019_4;UNITY_2019_4_40 /highentropyva+ /reference:"C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Bridge.Core.17.9.19-luna\lib\net40\Bridge.dll" /reference:"C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Bridge.Html5.17.9.0\lib\net40\Bridge.Html5.dll" /reference:"C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Bridge.WebGL.1.22.0\lib\net40\Bridge.WebGL.dll" /reference:"C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\DOTween.1.2.235\lib\net40\DOTween.dll" /reference:"C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Bridge.Newtonsoft.Json.1.16.0\lib\net40\Newtonsoft.Json.dll" /reference:"C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Retyped.Core.1.6.6733\lib\net40\Retyped.Core
-.dll" /reference:"C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Retyped.dom.2.8.6733\lib\net40\Retyped.dom.dll" /reference:"C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Retyped.es5.2.8.6733\lib\net40\Retyped.es5.dll" /reference:"C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Retyped.scripthost.2.8.6733\lib\net40\Retyped.scripthost.dll" /reference:"C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\com.unity.textmeshpro\2.0.0\TextMeshPro.dll" /reference:"C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\Vendor\UnityEngine.dll" /reference:"C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\com.unity.ui\1.2.1\UnityEngine.UI.dll" /reference:"C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\com.unity.urp\7.6\UnityEngine.UniversalRenderPipeline.dll" /debug+ /debug:full /optimize- /out:obj\Debug\UnityScriptsCompiler.dll /subsystemversion:6.00 /target:library /utf8output /langversion:7.2 "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaFlappyBird2\FlappyBird\Assets\Scripts\Camera\CameraMovement.cs" "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaFlappyBird2\FlappyBird\Assets\Scripts\EndCard\GameOver.cs" "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaFlappyBird2\FlappyBird\Assets\Scripts\PlayerBird\BirdDeath.cs" "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaFlappyBird2\FlappyBird\Assets\Scripts\PlayerBird\BirdMovement.cs" "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaFlappyBird2\FlappyBird\Assets\Scripts\PlayerBird\LunaPlaygroundFieldAttribute.cs" "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaFlappyBird2\FlappyBird\Assets\Scripts\Tutorial\BirdTutorial.cs" "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaFlappyBird2\FlappyBird\Assets\Scripts\Tutorial\HandTap.cs" Properties/AssemblyInfo.cs Sources/OtherDummyScript.cs "obj\Debug\.NETFramework,Version=v4.7.AssemblyAttributes.cs"
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:CS0626,1701,1702 /fullpaths /nostdlib+ /errorreport:prompt /warn:4 /define:UNITY_LUNA;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_2019;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2019_4;UNITY_2019_4_40 /highentropyva+ /reference:"C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Bridge.Core.17.9.19-luna\lib\net40\Bridge.dll" /reference:"C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Bridge.Html5.17.9.0\lib\net40\Bridge.Html5.dll" /reference:"C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Bridge.WebGL.1.22.0\lib\net40\Bridge.WebGL.dll" /reference:"C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\DOTween.1.2.235\lib\net40\DOTween.dll" /reference:"C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMaker
+Plug\pipeline\templates\LunaCompiler\packages\Bridge.Newtonsoft.Json.1.16.0\lib\net40\Newtonsoft.Json.dll" /reference:"C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Retyped.Core.1.6.6733\lib\net40\Retyped.Core.dll" /reference:"C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Retyped.dom.2.8.6733\lib\net40\Retyped.dom.dll" /reference:"C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Retyped.es5.2.8.6733\lib\net40\Retyped.es5.dll" /reference:"C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Retyped.scripthost.2.8.6733\lib\net40\Retyped.scripthost.dll" /reference:"C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\com.unity.textmeshpro\2.0.0\TextMeshPro.dll" /reference:"C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\Vendor\UnityEngine.dll" /reference:"C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\com.unity.ui\1.2.1\UnityEngine.UI.dll" /reference:"C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\com.unity.urp\7.6\UnityEngine.UniversalRenderPipeline.dll" /debug+ /debug:full /optimize- /out:obj\Debug\UnityScriptsCompiler.dll /subsystemversion:6.00 /target:library /utf8output /langversion:7.2 "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaFlappyBird2\FlappyBird\Assets\Scripts\Camera\CameraMovement.cs" "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaFlappyBird2\FlappyBird\Assets\Scripts\EndCard\GameOver.cs" "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaFlappyBird2\FlappyBird\Assets\Scripts\PlayerBird\BirdDeath.cs" "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaFlappyBird2\FlappyBird\Assets\Scripts\PlayerBird\BirdMovement.cs" "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaFlappyBird2\FlappyBird\Assets\Scripts\PlayerBird\LunaPlaygroundFieldAttribute.cs" "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaFlappyBird2\FlappyBird\Assets\Scripts\Tutorial\BirdTutorial.cs" "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaFlappyBird2\FlappyBird\Assets\Scripts\Tutorial\HandTap.cs" Properties/AssemblyInfo.cs Sources/OtherDummyScript.cs "obj\Debug\.NETFramework,Version=v4.7.AssemblyAttributes.cs"
 
-  CompilerServer: server - server processed compilation - 6195a2ce-f2c5-4679-b795-6bcf87d1f770
+  CompilerServer: server - server processed compilation - b7c2188e-64f7-4b95-a39d-19adeb1185a0
 
 _CopyFilesMarkedCopyLocal:
+  Copying file from "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Retyped.Core.1.6.6733\lib\net40\Retyped.Core.dll" to "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Retyped.Core.dll".
 
-  Copying file from "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Bridge.WebGL.1.22.0\lib\net40\Bridge.WebGL.dll" to "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Bridge.WebGL.dll".
   Copying file from "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Bridge.Newtonsoft.Json.1.16.0\lib\net40\Newtonsoft.Json.dll" to "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Newtonsoft.Json.dll".
   Copying file from "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Bridge.Html5.17.9.0\lib\net40\Bridge.Html5.dll" to "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Bridge.Html5.dll".
 
+  Copying file from "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Bridge.Core.17.9.19-luna\lib\net40\Bridge.dll" to "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Bridge.dll".
+
   Copying file from "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\DOTween.1.2.235\lib\net40\DOTween.dll" to "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\bin\Debug\DOTween.dll".
 
-  Copying file from "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Retyped.Core.1.6.6733\lib\net40\Retyped.Core.dll" to "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Retyped.Core.dll".
-
-  Copying file from "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Bridge.Core.17.9.19-luna\lib\net40\Bridge.dll" to "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Bridge.dll".
+  Copying file from "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Bridge.WebGL.1.22.0\lib\net40\Bridge.WebGL.dll" to "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Bridge.WebGL.dll".
 
   Copying file from "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Retyped.dom.2.8.6733\lib\net40\Retyped.dom.dll" to "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Retyped.dom.dll".
 
-  Copying file from "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Retyped.scripthost.2.8.6733\lib\net40\Retyped.scripthost.dll" to "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Retyped.scripthost.dll".
-
   Copying file from "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Retyped.es5.2.8.6733\lib\net40\Retyped.es5.dll" to "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Retyped.es5.dll".
+  Copying file from "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Retyped.scripthost.2.8.6733\lib\net40\Retyped.scripthost.dll" to "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Retyped.scripthost.dll".
 
   Copying file from "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\com.unity.textmeshpro\2.0.0\TextMeshPro.dll" to "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\bin\Debug\TextMeshPro.dll".
 
   Copying file from "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\Vendor\UnityEngine.dll" to "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\bin\Debug\UnityEngine.dll".
 
-  Copying file from "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\com.unity.ui\1.2.1\UnityEngine.UI.dll" to "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\bin\Deb
-ug\UnityEngine.UI.dll".
+  Copying file from "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\com.unity.ui\1.2.1\UnityEngine.UI.dll" to "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\bin\Debug\UnityEngine.UI.dll".
 
   Copying file from "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\com.unity.urp\7.6\UnityEngine.UniversalRenderPipeline.dll" to "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\bin\Debug\UnityEngine.UniversalRenderPipeline.dll".
 
@@ -155,18 +152,17 @@ ug\UnityEngine.UI.dll".
 
   Copying file from "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Bridge.Html5.17.9.0\lib\net40\Bridge.Html5.xml" to "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Bridge.Html5.xml".
 
-  Copying file from "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Bridge.WebGL.1.22.0\lib\net40\Bridge.WebGL.xml" to "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Script
-s\bin\Debug\Bridge.WebGL.xml".
-
-  Copying file from "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Retyped.dom.2.8.6733\lib\net40\Retyped.dom.xml" to "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Retyped.dom.xml".
-
-  Copying file from "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Retyped.es5.2.8.6733\lib\net40\Retyped.es5.xml" to "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Retyped.es5.xml".
-
-  Copying file from "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Retyped.scripthost.2.8.6733\lib\net40\Retyped.scripthost.xml" to "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Retyped.scripthost.xml".
+  Copying file from "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Bridge.WebGL.1.22.0\lib\net40\Bridge.WebGL.xml" to "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Bridge.WebGL.xml".
 
   Copying file from "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Bridge.Newtonsoft.Json.1.16.0\lib\net40\Newtonsoft.Json.xml" to "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Newtonsoft.Json.xml".
 
   Copying file from "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Retyped.Core.1.6.6733\lib\net40\Retyped.Core.xml" to "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Retyped.Core.xml".
+
+  Copying file from "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Retyped.dom.2.8.6733\lib\net40\Retyped.dom.xml" to "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Script
+s\bin\Debug\Retyped.dom.xml".
+
+  Copying file from "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Retyped.es5.2.8.6733\lib\net40\Retyped.es5.xml" to "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Retyped.es5.xml".
+  Copying file from "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\packages\Retyped.scripthost.2.8.6733\lib\net40\Retyped.scripthost.xml" to "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Retyped.scripthost.xml".
 
   Creating "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipeline\templates\LunaCompiler\Scripts\obj\Debug\Scripts.csproj.CopyComplete" because "AlwaysCreate" was specified.
 
@@ -190,19 +186,19 @@ Done Building Project "C:\Users\Lioz Madar\Desktop\LunaMaker\LunaMakerPlug\pipel
 
 
 Build succeeded.
-    0 Warning(s)
 
+    0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:10.29
+Time Elapsed 00:00:05.82
 
 Source code compiled successfully!
-report@code:build 10825.93
-report@diagnostics:verify 1.21
-report@diagnostics:upload 1698.47
-report@code:stage 13918.48
+report@code:build 6188.10
+report@diagnostics:verify 0.40
+report@diagnostics:upload 1505.69
+report@code:stage 8343.41
 [ Stage3 ] Code compiled and bundled successfully.
-report@package:stage 193541.39
+report@package:stage 108056.53
 [ Stage4 ] Target platform: playground
 [ Stage4 ] Package bundled successfully
-report@assets:stats 0.60
+report@assets:stats 0.46
