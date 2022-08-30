@@ -5,7 +5,7 @@ using Luna.Unity;
 
 public class BirdMovement : MonoBehaviour
 {
-    //[LunaPlaygroundField("All speed", 0 ,"wjfds")]
+    [LunaPlaygroundAsset("All speed", 0 ,"wjfds")]
     public float jumpForce;
 
     public float speed;
