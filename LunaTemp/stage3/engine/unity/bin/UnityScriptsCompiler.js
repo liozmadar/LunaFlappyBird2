@@ -1,6 +1,6 @@
-if ( TRACE ) { TRACE( JSON.parse( '["BirdDeath#init","BirdDeath#Start","BirdDeath#Update","BirdDeath#OnCollisionEnter2D","BirdDeath#OnTriggerEnter2D","BirdMovement#init","BirdMovement#Start","BirdMovement#Update","BirdMovement#BirdMoveForward","BirdMovement#ClickToFly","BirdTutorial#init","BirdTutorial#Start","BirdTutorial#Update","BirdTutorial#BirdTutorialFly","CameraMovement#init","CameraMovement#Start","CameraMovement#FixedUpdate","GameOver#Start","GameOver#Update","GameOver#RetryButton","HandTap#Start","HandTap#Update"]' ) ); }
+if ( TRACE ) { TRACE( JSON.parse( '["BirdDeath#init","BirdDeath#Start","BirdDeath#Update","BirdDeath#OnCollisionEnter2D","BirdDeath#Retry","BirdDeath#OnTriggerEnter2D","BirdMovement#init","BirdMovement#Start","BirdMovement#Update","BirdMovement#BirdMoveForward","BirdMovement#ClickToFly","BirdTutorial#init","BirdTutorial#Start","BirdTutorial#Update","BirdTutorial#BirdTutorialFly","CameraMovement#init","CameraMovement#Start","CameraMovement#FixedUpdate","GameManager#Awake","GameOver#Start","GameOver#Update","GameOver#RetryButton","HandTap#Start","HandTap#Update"]' ) ); }
 /**
- * @version 1.0.8277.31644
+ * @version 1.0.8278.36636
  * @copyright anton
  * @compiler Bridge.NET 17.9.19-luna
  */
@@ -25,7 +25,10 @@ Bridge.assembly("UnityScriptsCompiler", function ($asm, globals) {
             emote2: null,
             emote3: null,
             emoteTimer: 0,
-            emoteBool: false
+            emoteBool: false,
+            birdChances: 0,
+            gameManager: null,
+            isDead: false
         },
         ctors: {
             init: function () {
@@ -41,6 +44,8 @@ if ( TRACE ) { TRACE( "BirdDeath#Start", this ); }
 
                 this.birdMovement = this.GetComponent(BirdMovement);
                 this.anim = this.GetComponentInChildren(UnityEngine.Animator);
+
+                this.gameManager = UnityEngine.Object.FindObjectOfType(GameManager);
             },
             /*BirdDeath.Start end.*/
 
@@ -72,18 +77,35 @@ if ( TRACE ) { TRACE( "BirdDeath#Update", this ); }
             OnCollisionEnter2D: function (collision) {
 if ( TRACE ) { TRACE( "BirdDeath#OnCollisionEnter2D", this ); }
 
-                if (Bridge.referenceEquals(collision.gameObject.tag, "Object")) {
+                var $t;
+                if (Bridge.referenceEquals(collision.gameObject.tag, "Object") && !this.isDead) {
                     this.anim.enabled = false;
+                    this.isDead = true;
 
                     this.birdMovement.speed = 0;
                     this.birdMovement.birdDeath = true;
 
+
                     this.birdSprite = (this.GetComponentInChildren(UnityEngine.SpriteRenderer).sprite = this.birdDeathSprite, this.birdDeathSprite);
 
-                    this.gameOverBool = true;
+                    //how many chances befor the EndCard appears
+                    ($t = this.gameManager).birdEndCard = ($t.birdEndCard + 1) | 0;
+                    if (this.gameManager.birdEndCard === this.birdChances) {
+                        this.gameOverBool = true;
+                    } else {
+                        this.Invoke("Retry", 2);
+                    }
                 }
             },
             /*BirdDeath.OnCollisionEnter2D end.*/
+
+            /*BirdDeath.Retry start.*/
+            Retry: function () {
+if ( TRACE ) { TRACE( "BirdDeath#Retry", this ); }
+
+                UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+            },
+            /*BirdDeath.Retry end.*/
 
             /*BirdDeath.OnTriggerEnter2D start.*/
             OnTriggerEnter2D: function (collision) {
@@ -288,6 +310,34 @@ if ( TRACE ) { TRACE( "CameraMovement#FixedUpdate", this ); }
     });
     /*CameraMovement end.*/
 
+    /*GameManager start.*/
+    Bridge.define("GameManager", {
+        inherits: [UnityEngine.MonoBehaviour],
+        statics: {
+            fields: {
+                isNew: false
+            }
+        },
+        fields: {
+            birdEndCard: 0
+        },
+        methods: {
+            /*GameManager.Awake start.*/
+            Awake: function () {
+if ( TRACE ) { TRACE( "GameManager#Awake", this ); }
+
+                if (!GameManager.isNew) {
+                    UnityEngine.Object.DontDestroyOnLoad(this.gameObject);
+                    GameManager.isNew = true;
+                }
+            },
+            /*GameManager.Awake end.*/
+
+
+        }
+    });
+    /*GameManager end.*/
+
     /*GameOver start.*/
     Bridge.define("GameOver", {
         inherits: [UnityEngine.MonoBehaviour],
@@ -354,12 +404,6 @@ if ( TRACE ) { TRACE( "HandTap#Update", this ); }
     });
     /*IAmAnEmptyScriptJustToMakeCodelessProjectsCompileProperty end.*/
 
-    /*LunaPlaygroundFieldAttribute start.*/
-    Bridge.define("LunaPlaygroundFieldAttribute", {
-        inherits: [System.Attribute]
-    });
-    /*LunaPlaygroundFieldAttribute end.*/
-
     var $m = Bridge.setMetadata,
         $n = ["System","UnityEngine","TMPro"];
 
@@ -372,16 +416,16 @@ if ( TRACE ) { TRACE( "HandTap#Update", this ); }
     /*GameOver end.*/
 
     /*BirdDeath start.*/
-    $m("BirdDeath", function () { return {"att":1048577,"a":2,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"},{"a":1,"n":"OnCollisionEnter2D","t":8,"pi":[{"n":"collision","pt":$n[1].Collision2D,"ps":0}],"sn":"OnCollisionEnter2D","rt":$n[0].Void,"p":[$n[1].Collision2D]},{"a":1,"n":"OnTriggerEnter2D","t":8,"pi":[{"n":"collision","pt":$n[1].Collider2D,"ps":0}],"sn":"OnTriggerEnter2D","rt":$n[0].Void,"p":[$n[1].Collider2D]},{"a":1,"n":"Start","t":8,"sn":"Start","rt":$n[0].Void},{"a":1,"n":"Update","t":8,"sn":"Update","rt":$n[0].Void},{"a":2,"n":"RetryText","t":4,"rt":$n[1].GameObject,"sn":"RetryText"},{"a":2,"n":"SP","t":4,"rt":$n[1].SpriteRenderer,"sn":"SP"},{"a":1,"n":"anim","t":4,"rt":$n[1].Animator,"sn":"anim"},{"a":2,"n":"birdDeathSprite","t":4,"rt":$n[1].Sprite,"sn":"birdDeathSprite"},{"a":2,"n":"birdMovement","t":4,"rt":BirdMovement,"sn":"birdMovement"},{"a":1,"n":"birdSprite","t":4,"rt":$n[1].Sprite,"sn":"birdSprite"},{"a":2,"n":"emote1","t":4,"rt":$n[1].Sprite,"sn":"emote1"},{"a":2,"n":"emote2","t":4,"rt":$n[1].Sprite,"sn":"emote2"},{"a":2,"n":"emote3","t":4,"rt":$n[1].Sprite,"sn":"emote3"},{"a":1,"n":"emoteBool","t":4,"rt":$n[0].Boolean,"sn":"emoteBool","box":function ($v) { return Bridge.box($v, System.Boolean, System.Boolean.toString);}},{"a":1,"n":"emoteTimer","t":4,"rt":$n[0].Single,"sn":"emoteTimer","box":function ($v) { return Bridge.box($v, System.Single, System.Single.format, System.Single.getHashCode);}},{"a":2,"n":"gameOverBool","t":4,"rt":$n[0].Boolean,"sn":"gameOverBool","box":function ($v) { return Bridge.box($v, System.Boolean, System.Boolean.toString);}},{"a":2,"n":"gameOverText","t":4,"rt":$n[2].TextMeshProUGUI,"sn":"gameOverText"},{"a":1,"n":"scoreNumber","t":4,"rt":$n[0].Int32,"sn":"scoreNumber","box":function ($v) { return Bridge.box($v, System.Int32);}},{"a":2,"n":"scoreTextNumber","t":4,"rt":$n[2].TextMeshProUGUI,"sn":"scoreTextNumber"}]}; }, $n);
+    $m("BirdDeath", function () { return {"att":1048577,"a":2,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"},{"a":1,"n":"OnCollisionEnter2D","t":8,"pi":[{"n":"collision","pt":$n[1].Collision2D,"ps":0}],"sn":"OnCollisionEnter2D","rt":$n[0].Void,"p":[$n[1].Collision2D]},{"a":1,"n":"OnTriggerEnter2D","t":8,"pi":[{"n":"collision","pt":$n[1].Collider2D,"ps":0}],"sn":"OnTriggerEnter2D","rt":$n[0].Void,"p":[$n[1].Collider2D]},{"a":1,"n":"Retry","t":8,"sn":"Retry","rt":$n[0].Void},{"a":1,"n":"Start","t":8,"sn":"Start","rt":$n[0].Void},{"a":1,"n":"Update","t":8,"sn":"Update","rt":$n[0].Void},{"a":2,"n":"RetryText","t":4,"rt":$n[1].GameObject,"sn":"RetryText"},{"a":2,"n":"SP","t":4,"rt":$n[1].SpriteRenderer,"sn":"SP"},{"a":1,"n":"anim","t":4,"rt":$n[1].Animator,"sn":"anim"},{"at":[new UnityEngine.LunaPlaygroundFieldAttribute("birdChances", 2, "Game tries", false, null)],"a":2,"n":"birdChances","t":4,"rt":$n[0].Int32,"sn":"birdChances","box":function ($v) { return Bridge.box($v, System.Int32);}},{"a":2,"n":"birdDeathSprite","t":4,"rt":$n[1].Sprite,"sn":"birdDeathSprite"},{"a":2,"n":"birdMovement","t":4,"rt":BirdMovement,"sn":"birdMovement"},{"a":1,"n":"birdSprite","t":4,"rt":$n[1].Sprite,"sn":"birdSprite"},{"a":2,"n":"emote1","t":4,"rt":$n[1].Sprite,"sn":"emote1"},{"a":2,"n":"emote2","t":4,"rt":$n[1].Sprite,"sn":"emote2"},{"a":2,"n":"emote3","t":4,"rt":$n[1].Sprite,"sn":"emote3"},{"a":1,"n":"emoteBool","t":4,"rt":$n[0].Boolean,"sn":"emoteBool","box":function ($v) { return Bridge.box($v, System.Boolean, System.Boolean.toString);}},{"a":1,"n":"emoteTimer","t":4,"rt":$n[0].Single,"sn":"emoteTimer","box":function ($v) { return Bridge.box($v, System.Single, System.Single.format, System.Single.getHashCode);}},{"a":1,"n":"gameManager","t":4,"rt":GameManager,"sn":"gameManager"},{"a":2,"n":"gameOverBool","t":4,"rt":$n[0].Boolean,"sn":"gameOverBool","box":function ($v) { return Bridge.box($v, System.Boolean, System.Boolean.toString);}},{"a":2,"n":"gameOverText","t":4,"rt":$n[2].TextMeshProUGUI,"sn":"gameOverText"},{"a":1,"n":"isDead","t":4,"rt":$n[0].Boolean,"sn":"isDead","box":function ($v) { return Bridge.box($v, System.Boolean, System.Boolean.toString);}},{"a":1,"n":"scoreNumber","t":4,"rt":$n[0].Int32,"sn":"scoreNumber","box":function ($v) { return Bridge.box($v, System.Int32);}},{"a":2,"n":"scoreTextNumber","t":4,"rt":$n[2].TextMeshProUGUI,"sn":"scoreTextNumber"}]}; }, $n);
     /*BirdDeath end.*/
 
     /*BirdMovement start.*/
-    $m("BirdMovement", function () { return {"att":1048577,"a":2,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"},{"a":2,"n":"BirdMoveForward","t":8,"sn":"BirdMoveForward","rt":$n[0].Void},{"a":2,"n":"ClickToFly","t":8,"sn":"ClickToFly","rt":$n[0].Void},{"a":1,"n":"Start","t":8,"sn":"Start","rt":$n[0].Void},{"a":1,"n":"Update","t":8,"sn":"Update","rt":$n[0].Void},{"a":2,"n":"birdDeath","t":4,"rt":$n[0].Boolean,"sn":"birdDeath","box":function ($v) { return Bridge.box($v, System.Boolean, System.Boolean.toString);}},{"a":1,"n":"firstTutorialClick","t":4,"rt":$n[0].Boolean,"sn":"firstTutorialClick","box":function ($v) { return Bridge.box($v, System.Boolean, System.Boolean.toString);}},{"a":1,"n":"firstTutorialClickAlreadyClicked","t":4,"rt":$n[0].Boolean,"sn":"firstTutorialClickAlreadyClicked","box":function ($v) { return Bridge.box($v, System.Boolean, System.Boolean.toString);}},{"a":1,"n":"firstTutorialClickOneJump","t":4,"rt":$n[0].Boolean,"sn":"firstTutorialClickOneJump","box":function ($v) { return Bridge.box($v, System.Boolean, System.Boolean.toString);}},{"a":1,"n":"firstTutorialClickTimer","t":4,"rt":$n[0].Single,"sn":"firstTutorialClickTimer","box":function ($v) { return Bridge.box($v, System.Single, System.Single.format, System.Single.getHashCode);}},{"at":[new UnityEngine.LunaPlaygroundAssetAttribute("All speed", 0, "wjfds")],"a":2,"n":"jumpForce","t":4,"rt":$n[0].Single,"sn":"jumpForce","box":function ($v) { return Bridge.box($v, System.Single, System.Single.format, System.Single.getHashCode);}},{"a":1,"n":"rb","t":4,"rt":$n[1].Rigidbody2D,"sn":"rb"},{"a":2,"n":"speed","t":4,"rt":$n[0].Single,"sn":"speed","box":function ($v) { return Bridge.box($v, System.Single, System.Single.format, System.Single.getHashCode);}},{"a":2,"n":"tutorialBird","t":4,"rt":$n[1].GameObject,"sn":"tutorialBird"}]}; }, $n);
+    $m("BirdMovement", function () { return {"att":1048577,"a":2,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"},{"a":2,"n":"BirdMoveForward","t":8,"sn":"BirdMoveForward","rt":$n[0].Void},{"a":2,"n":"ClickToFly","t":8,"sn":"ClickToFly","rt":$n[0].Void},{"a":1,"n":"Start","t":8,"sn":"Start","rt":$n[0].Void},{"a":1,"n":"Update","t":8,"sn":"Update","rt":$n[0].Void},{"a":2,"n":"birdDeath","t":4,"rt":$n[0].Boolean,"sn":"birdDeath","box":function ($v) { return Bridge.box($v, System.Boolean, System.Boolean.toString);}},{"a":1,"n":"firstTutorialClick","t":4,"rt":$n[0].Boolean,"sn":"firstTutorialClick","box":function ($v) { return Bridge.box($v, System.Boolean, System.Boolean.toString);}},{"a":1,"n":"firstTutorialClickAlreadyClicked","t":4,"rt":$n[0].Boolean,"sn":"firstTutorialClickAlreadyClicked","box":function ($v) { return Bridge.box($v, System.Boolean, System.Boolean.toString);}},{"a":1,"n":"firstTutorialClickOneJump","t":4,"rt":$n[0].Boolean,"sn":"firstTutorialClickOneJump","box":function ($v) { return Bridge.box($v, System.Boolean, System.Boolean.toString);}},{"a":1,"n":"firstTutorialClickTimer","t":4,"rt":$n[0].Single,"sn":"firstTutorialClickTimer","box":function ($v) { return Bridge.box($v, System.Single, System.Single.format, System.Single.getHashCode);}},{"at":[new UnityEngine.LunaPlaygroundFieldAttribute("Jump force", 1, "Bird", false, null)],"a":2,"n":"jumpForce","t":4,"rt":$n[0].Single,"sn":"jumpForce","box":function ($v) { return Bridge.box($v, System.Single, System.Single.format, System.Single.getHashCode);}},{"a":1,"n":"rb","t":4,"rt":$n[1].Rigidbody2D,"sn":"rb"},{"at":[new UnityEngine.LunaPlaygroundFieldAttribute("Speed", 1, "Bird", false, null)],"a":2,"n":"speed","t":4,"rt":$n[0].Single,"sn":"speed","box":function ($v) { return Bridge.box($v, System.Single, System.Single.format, System.Single.getHashCode);}},{"a":2,"n":"tutorialBird","t":4,"rt":$n[1].GameObject,"sn":"tutorialBird"}]}; }, $n);
     /*BirdMovement end.*/
 
-    /*LunaPlaygroundFieldAttribute start.*/
-    $m("LunaPlaygroundFieldAttribute", function () { return {"att":1048576,"a":4,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"}]}; }, $n);
-    /*LunaPlaygroundFieldAttribute end.*/
+    /*GameManager start.*/
+    $m("GameManager", function () { return {"att":1048577,"a":2,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"},{"a":1,"n":"Awake","t":8,"sn":"Awake","rt":$n[0].Void},{"at":[new UnityEngine.HideInInspector()],"a":2,"n":"birdEndCard","t":4,"rt":$n[0].Int32,"sn":"birdEndCard","box":function ($v) { return Bridge.box($v, System.Int32);}},{"a":1,"n":"isNew","is":true,"t":4,"rt":$n[0].Boolean,"sn":"isNew","box":function ($v) { return Bridge.box($v, System.Boolean, System.Boolean.toString);}}]}; }, $n);
+    /*GameManager end.*/
 
     /*BirdTutorial start.*/
     $m("BirdTutorial", function () { return {"att":1048577,"a":2,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"},{"a":2,"n":"BirdTutorialFly","t":8,"sn":"BirdTutorialFly","rt":$n[0].Void},{"a":1,"n":"Start","t":8,"sn":"Start","rt":$n[0].Void},{"a":1,"n":"Update","t":8,"sn":"Update","rt":$n[0].Void},{"a":2,"n":"jumpForce","t":4,"rt":$n[0].Single,"sn":"jumpForce","box":function ($v) { return Bridge.box($v, System.Single, System.Single.format, System.Single.getHashCode);}},{"a":1,"n":"rb","t":4,"rt":$n[1].Rigidbody2D,"sn":"rb"},{"a":1,"n":"timer","t":4,"rt":$n[0].Single,"sn":"timer","box":function ($v) { return Bridge.box($v, System.Single, System.Single.format, System.Single.getHashCode);}}]}; }, $n);

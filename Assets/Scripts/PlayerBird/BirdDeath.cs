@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Luna.Unity;
+using UnityEngine.SceneManagement;
 
 public class BirdDeath : MonoBehaviour
 {
@@ -25,11 +26,20 @@ public class BirdDeath : MonoBehaviour
     public Sprite emote3;
     private float emoteTimer = 1;
     private bool emoteBool;
+
+    [LunaPlaygroundField("birdChances", 2, "Game tries")]
+    public int birdChances;
+    private GameManager gameManager;
+
+    private bool isDead;
+
     // Start is called before the first frame update
     void Start()
     {
         birdMovement = GetComponent<BirdMovement>();
         anim = GetComponentInChildren<Animator>();
+
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -59,17 +69,29 @@ public class BirdDeath : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Object")
+        if (collision.gameObject.tag == "Object" && !isDead)
         {
             anim.enabled = false;
+            isDead = true;
 
             birdMovement.speed = 0;
             birdMovement.birdDeath = true;
 
+
             birdSprite = GetComponentInChildren<SpriteRenderer>().sprite = birdDeathSprite;
 
-            gameOverBool = true;
+            //how many chances befor the EndCard appears
+            gameManager.birdEndCard++;
+            if (gameManager.birdEndCard == birdChances)
+            {
+                gameOverBool = true;
+            }
+            else Invoke("Retry", 2);   
         }
+    }
+    void Retry()
+    {
+        SceneManager.LoadScene(0);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class BirdMovement : MonoBehaviour
 {
-    //[LunaPlaygroundField("name", 1, "title")]
-    //private string myName;
-
+    [LunaPlaygroundField("Jump force", 1, "Bird")]
     public float jumpForce;
 
+    [LunaPlaygroundField("Speed", 1, "Bird")]
     public float speed;
 
     private Rigidbody2D rb;
