@@ -1206,8 +1206,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 295163858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.7, y: 0.5, z: 1}
+  m_LocalPosition: {x: -0.666, y: 0, z: 0}
+  m_LocalScale: {x: 2.0096104, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -2003,7 +2003,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &956793452
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2018,10 +2018,10 @@ RectTransform:
   m_Father: {fileID: 223075727}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 73}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 82}
+  m_SizeDelta: {x: 1080, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &956793453
 MonoBehaviour:
@@ -2042,7 +2042,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Over !
+  m_text: Game Over!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2072,7 +2072,7 @@ MonoBehaviour:
   m_fontSize: 130
   m_fontSizeBase: 130
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 130
   m_fontSizeMax: 130
   m_fontStyle: 1
@@ -2352,6 +2352,7 @@ MonoBehaviour:
   emote1: {fileID: 21300000, guid: 2ba02e975b934e64db4ca59969bbe91d, type: 3}
   emote2: {fileID: 21300000, guid: 4e2cf317741824345a81401a80bb5c41, type: 3}
   emote3: {fileID: 21300000, guid: 03afe0621099f8e44b395e2b6af30c86, type: 3}
+  emoteDead: {fileID: 21300000, guid: 5a656be4f9311874faf087aeb1ffa897, type: 3}
   birdChances: 2
 --- !u!114 &1292655530
 MonoBehaviour:

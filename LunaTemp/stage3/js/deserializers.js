@@ -675,7 +675,8 @@ Deserializers["BirdDeath"] = function (request, data, root) {
   request.r(i627[13], i627[14], 0, i626, 'emote1')
   request.r(i627[15], i627[16], 0, i626, 'emote2')
   request.r(i627[17], i627[18], 0, i626, 'emote3')
-  i626.birdChances = i627[19]
+  request.r(i627[19], i627[20], 0, i626, 'emoteDead')
+  i626.birdChances = i627[21]
   return i626
 }
 
@@ -1922,7 +1923,7 @@ Deserializers.productName = "FlappyBird";
 
 Deserializers.lunaInitializationTime = "08/28/2022 16:26:06";
 
-Deserializers.lunaDaysRunning = "3.0";
+Deserializers.lunaDaysRunning = "3.1";
 
 Deserializers.lunaVersion = "3.12.0";
 
@@ -1970,7 +1971,7 @@ Deserializers.applicationIdentifier = "com.DefaultCompany.FlappyBird";
 
 Deserializers.disableAntiAliasing = true;
 
-Deserializers.buildID = "d4b324c9-3278-4dd2-a5d5-af56ec85e11d";
+Deserializers.buildID = "c9e83b7c-ce98-41ec-b268-60cfa8122b5d";
 
 Deserializers.typeNameToIdMap = function(){ var i = 0; return Deserializers.types.reduce( function( res, item ) { res[ item ] = i++; return res; }, {} ) }()
 

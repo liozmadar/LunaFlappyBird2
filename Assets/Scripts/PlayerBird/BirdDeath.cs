@@ -24,13 +24,14 @@ public class BirdDeath : MonoBehaviour
     public Sprite emote1;
     public Sprite emote2;
     public Sprite emote3;
+    public Sprite emoteDead;
     private float emoteTimer = 1;
     private bool emoteBool;
 
-    [LunaPlaygroundField("birdChances", 2, "Game tries")]
+    [LunaPlaygroundField("Bird Chances (For EndCard)", 2, "Game tries")]
     public int birdChances;
-    private GameManager gameManager;
 
+    private GameManager gameManager;
     private bool isDead;
 
     // Start is called before the first frame update
@@ -63,7 +64,11 @@ public class BirdDeath : MonoBehaviour
             {
                 emoteBool = false;
                 emoteTimer = 1;
-                SP.gameObject.SetActive(false);
+                if (SP.sprite == emoteDead)
+                {
+                    SP.gameObject.SetActive(true);
+                }
+                else SP.gameObject.SetActive(false);
             }
         }
     }
@@ -71,6 +76,9 @@ public class BirdDeath : MonoBehaviour
     {
         if (collision.gameObject.tag == "Object" && !isDead)
         {
+            emoteBool = true;
+            SP.sprite = emoteDead;
+
             anim.enabled = false;
             isDead = true;
 
@@ -86,7 +94,7 @@ public class BirdDeath : MonoBehaviour
             {
                 gameOverBool = true;
             }
-            else Invoke("Retry", 2);   
+            else Invoke("Retry", 2);
         }
     }
     void Retry()
