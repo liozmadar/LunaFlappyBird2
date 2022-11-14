@@ -11,7 +11,7 @@ public class WallsCreate : MonoBehaviour
     public float speed;
 
     public GameObject backGroundImage;
-    public float backGroundImageTimer = 8;
+    public float backGroundImageTimer = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +34,7 @@ public class WallsCreate : MonoBehaviour
         if (backGroundImageTimer < 0)
         {
             BackGroundImageCreating();
-            backGroundImageTimer = 8;
+            backGroundImageTimer = 10;
         }
     }
     void WallsCreating()
@@ -44,6 +44,7 @@ public class WallsCreate : MonoBehaviour
     }
     void BackGroundImageCreating()
     {
-        Instantiate(backGroundImage, transform.position, Quaternion.identity);
+        Vector3 backGroundPosition = new Vector3(transform.position.x + 20, 0, 0);
+        Instantiate(backGroundImage, backGroundPosition, Quaternion.identity);
     }
 }
