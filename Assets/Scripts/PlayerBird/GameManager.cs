@@ -5,8 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [HideInInspector]public int birdEndCard;
-
     private static bool isNew;
+
     private void Awake()
     {
         if (!isNew)
@@ -15,4 +15,5 @@ public class GameManager : MonoBehaviour
             isNew = true;
         }
     }
+
 }

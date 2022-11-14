@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class BirdDeath : MonoBehaviour
 {
+    public static BirdDeath instance;
+
     private Sprite birdSprite;
     public Sprite birdDeathSprite;
     private Animator anim;
@@ -16,7 +18,7 @@ public class BirdDeath : MonoBehaviour
     public GameObject RetryText;
     public bool gameOverBool;
 
-    private int scoreNumber;
+    public int scoreNumber;
 
     public BirdMovement birdMovement;
 
@@ -34,9 +36,13 @@ public class BirdDeath : MonoBehaviour
     private GameManager gameManager;
     private bool isDead;
 
+    public GameObject endGameCard;
+
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
+
         birdMovement = GetComponent<BirdMovement>();
         anim = GetComponentInChildren<Animator>();
 
@@ -51,7 +57,7 @@ public class BirdDeath : MonoBehaviour
             gameOverText.gameObject.SetActive(true);
             RetryText.SetActive(true);
             gameOverText.fontSize++;
-            if (gameOverText.fontSize > 130)
+            if (gameOverText.fontSize > 85)
             {
                 gameOverBool = false;
             }
@@ -95,6 +101,7 @@ public class BirdDeath : MonoBehaviour
                 gameOverBool = true;
             }
             else Invoke("Retry", 2);
+            endGameCard.SetActive(true);
         }
     }
     void Retry()
