@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WallsCreate : MonoBehaviour
 {
@@ -8,6 +9,10 @@ public class WallsCreate : MonoBehaviour
     public float firstWallsTimer = 0;
     public float newWallsTimer = 0;
     public float speed;
+
+    public GameObject backGroundImage;
+    public float backGroundImageTimer = 8;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,10 +30,20 @@ public class WallsCreate : MonoBehaviour
             WallsCreating();
             firstWallsTimer = newWallsTimer;
         }
+        backGroundImageTimer -= Time.deltaTime;
+        if (backGroundImageTimer < 0)
+        {
+            BackGroundImageCreating();
+            backGroundImageTimer = 8;
+        }
     }
     void WallsCreating()
     {
         int randomWall = Random.Range(0, 3);
         Instantiate(walls[randomWall], transform.position, Quaternion.identity);
+    }
+    void BackGroundImageCreating()
+    {
+        Instantiate(backGroundImage, transform.position, Quaternion.identity);
     }
 }
