@@ -15,6 +15,7 @@ public class CanvasManager : MonoBehaviour
     void Start()
     {
         instance = this;
+        // DeleteBestNumber();
     }
 
     // Update is called once per frame
