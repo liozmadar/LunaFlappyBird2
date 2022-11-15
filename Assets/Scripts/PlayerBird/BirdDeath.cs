@@ -13,7 +13,6 @@ public class BirdDeath : MonoBehaviour
     public Sprite birdDeathSprite;
     private Animator anim;
 
-    public TextMeshProUGUI scoreTextNumber;
     public TextMeshProUGUI gameOverText;
     public GameObject RetryText;
     public bool gameOverBool;
@@ -113,7 +112,6 @@ public class BirdDeath : MonoBehaviour
         if (collision.gameObject.tag == "BirdPassThrough")
         {
             scoreNumber++;
-            scoreTextNumber.text = scoreNumber.ToString();
 
             emoteBool = true;
             float random = Random.Range(1, 4);

@@ -10,30 +10,41 @@ public class CanvasManager : MonoBehaviour
     public TextMeshProUGUI scoreNumber;
     public TextMeshProUGUI bestScoreNumber;
 
-    private static int BestScoreNumberStatic;
+
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
-        Debug.Log(BestScoreNumberStatic);
     }
 
     // Update is called once per frame
     void Update()
     {
-        scoreNumber.text = BirdDeath.instance.scoreNumber.ToString();
-        BestScoreNumber();
         CheckTheBestScoreNumber();
+        ScoreNumber();
     }
-    public void BestScoreNumber()
+    void ScoreNumber()
     {
-        BestScoreNumberStatic = BirdDeath.instance.scoreNumber;
+        scoreNumber.text = BirdDeath.instance.scoreNumber.ToString();
+    }
+    void BestScoreNumber()
+    {
+        PlayerPrefs.SetInt("Check", BirdDeath.instance.scoreNumber);
+        bestScoreNumber.text = PlayerPrefs.GetInt("Check").ToString();
     }
     public void CheckTheBestScoreNumber()
     {
-        if (BirdDeath.instance.scoreNumber > BestScoreNumberStatic)
+        if (BirdDeath.instance.scoreNumber > PlayerPrefs.GetInt("Check"))
         {
-            BestScoreNumberStatic = BirdDeath.instance.scoreNumber;
+            BestScoreNumber();
         }
+        else
+        {
+            bestScoreNumber.text = PlayerPrefs.GetInt("Check").ToString();
+        }
+    }
+    void DeleteBestNumber()
+    {
+        PlayerPrefs.DeleteKey("Check");
     }
 }
