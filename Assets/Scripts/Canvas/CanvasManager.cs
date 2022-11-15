@@ -9,13 +9,13 @@ public class CanvasManager : MonoBehaviour
 
     public TextMeshProUGUI scoreNumber;
     public TextMeshProUGUI bestScoreNumber;
-
+    public TextMeshProUGUI scoreNumberOnScreen;
 
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
-        // DeleteBestNumber();
+        //DeleteBestNumber();
     }
 
     // Update is called once per frame
@@ -23,6 +23,7 @@ public class CanvasManager : MonoBehaviour
     {
         CheckTheBestScoreNumber();
         ScoreNumber();
+        scoreNumberOnScreen.text = BirdDeath.instance.scoreNumber.ToString();
     }
     void ScoreNumber()
     {
